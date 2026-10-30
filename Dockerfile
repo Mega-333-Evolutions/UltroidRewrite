@@ -114,7 +114,8 @@ ENV PATH=${MINICONDA_DIR}/envs/${CONDA_ENV}/bin:${MINICONDA_DIR}/bin:$PATH
 # -----------------------------------------------------------------------------
 RUN echo "Better logs#2"
 
-RUN --mount=type=secret,id=GIT_TOKEN,required=false \
+# Added mode=0444 so the non-root user can read the secret file
+RUN --mount=type=secret,id=GIT_TOKEN,mode=0444,required=false \
     if [ -f /run/secrets/GIT_TOKEN ]; then \
         TOKEN=$(cat /run/secrets/GIT_TOKEN); \
         GIT_URL="https://${TOKEN}@github.com/${REPO_OWNER}/${REPO_NAME}.git"; \
