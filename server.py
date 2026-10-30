@@ -6,12 +6,12 @@
 # KEEP_ALIVE / KEEP_ALIVE_MIN_SECONDS / KEEP_ALIVE_MAX_SECONDS — see
 # pyUltroid/webserver/keepalive.py).
 #
-# Under start.sh this file is the container's foreground process while
-# `python3 -m pyUltroid` runs in the background. Both may race to own the
-# setup port (env PORT, default 7860): whoever binds first serves; this
-# shim keeps retrying the bind so it stays alive, and the post-setup bot
-# spawn consults the bootstrap waiter's PID marker so exactly one bot
-# starts (see pyUltroid/webserver/README.md for the full model).
+# Under start.sh this file runs in the background while `python3 -m
+# pyUltroid` runs in the foreground. Both may race to own the setup port
+# (env PORT, default 7860): whoever binds first serves; this shim keeps
+# retrying the bind so it stays alive, and the post-setup bot spawn
+# consults the bootstrap waiter's PID marker so exactly one bot starts
+# (see pyUltroid/webserver/README.md for the full model).
 
 import os
 import time

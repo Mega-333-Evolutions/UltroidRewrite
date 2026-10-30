@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.14'",
@@ -165,18 +165,6 @@ wheels = [
 ]
 
 [[package]]
-name = "aiohttp-retry"
-version = "2.9.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiohttp" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/61/ebda4d8e3d8cfa1fd3db0fb428db2dd7461d5742cea35178277ad180b033/aiohttp_retry-2.9.1.tar.gz", hash = "sha256:8eb75e904ed4ee5c2ec242fefe85bf04240f685391c4879d8f541d6028ff01f1", size = 13608, upload-time = "2024-11-06T10:44:54.574Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/99/84ba7273339d0f3dfa57901b846489d2e5c2cd731470167757f1935fffbd/aiohttp_retry-2.9.1-py3-none-any.whl", hash = "sha256:66d2759d1921838256a05a3f80ad7e724936f083e35be5abb5e16eed6be6dc54", size = 9981, upload-time = "2024-11-06T10:44:52.917Z" },
-]
-
-[[package]]
 name = "aiosignal"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -192,7 +180,7 @@ wheels = [
 [[package]]
 name = "akipy"
 version = "0.1.2"
-source = { git = "https://github.com/ufoptg/akipy.git#2af0027d05ef32a89aa6dede27a7bde4d8c4ad0e" }
+source = { git = "https://github.com/ufoptg/akipy.git?rev=2af0027d05ef32a89aa6dede27a7bde4d8c4ad0e#2af0027d05ef32a89aa6dede27a7bde4d8c4ad0e" }
 dependencies = [
     { name = "httpx" },
 ]
@@ -280,7 +268,7 @@ wheels = [
 [[package]]
 name = "asynclyrics-extractor"
 version = "0.0.7"
-source = { git = "https://github.com/New-dev0/AsyncLyricsExtractor.git#d66711558690ad53fb2b485f6c8ffa1bbd30a429" }
+source = { git = "https://github.com/New-dev0/AsyncLyricsExtractor.git?rev=d66711558690ad53fb2b485f6c8ffa1bbd30a429#d66711558690ad53fb2b485f6c8ffa1bbd30a429" }
 dependencies = [
     { name = "aiohttp" },
     { name = "beautifulsoup4" },
@@ -865,7 +853,7 @@ wheels = [
 [[package]]
 name = "covid"
 version = "3.0.0"
-source = { git = "https://github.com/ufoptg/covid.git#91e231d579b175f4f8d736f95807560d4604549f" }
+source = { git = "https://github.com/ufoptg/covid.git?rev=91e231d579b175f4f8d736f95807560d4604549f#91e231d579b175f4f8d736f95807560d4604549f" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "bleach" },
@@ -947,14 +935,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e0/20/92eaa6b0aec7189fa4b75c890640e076e9e793095721db69c5c81142c2e1/cssselect2-0.9.0.tar.gz", hash = "sha256:759aa22c216326356f65e62e791d66160a0f9c91d1424e8d8adc5e74dddfc6fb", size = 35595, upload-time = "2026-02-12T17:16:39.614Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/21/0e/8459ca4413e1a21a06c97d134bfaf18adfd27cea068813dc0faae06cbf00/cssselect2-0.9.0-py3-none-any.whl", hash = "sha256:6a99e5f91f9a016a304dd929b0966ca464bcfda15177b6fb4a118fc0fb5d9563", size = 15453, upload-time = "2026-02-12T17:16:38.317Z" },
-]
-
-[[package]]
-name = "dataclass-factory"
-version = "2.16"
-source = { registry = "https://pypi.org/simple" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f1/66/50b9f5d8a0e9fbe5469c5b8a7f198511fff9959347fc2443531d651b21d7/dataclass_factory-2.16-py3-none-any.whl", hash = "sha256:9d01e73d40b8f74051df822f21d8dc8bbf2754b11670cd1c477357e8b21323ed", size = 29693, upload-time = "2022-07-20T14:21:06.678Z" },
 ]
 
 [[package]]
@@ -2350,6 +2330,22 @@ wheels = [
 ]
 
 [[package]]
+name = "nodejs-wheel-binaries"
+version = "24.19.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c0/76/7e97195e14346598565a0de4ca8bdbd5e634b3fb5b1ba590b7b1b89f8a63/nodejs_wheel_binaries-24.19.0.tar.gz", hash = "sha256:db217eef8cab8551667863379b08db4d9067403f6cbbe87481eb40edceb8aa9b", size = 8058, upload-time = "2026-08-19T21:47:19.671Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8c/52/0774b52c7be8151ad9d5aff44edc100c3f13d6d8eb3765f63ffa40e69fe8/nodejs_wheel_binaries-24.19.0-py2.py3-none-macosx_13_0_arm64.whl", hash = "sha256:e12cbfd69089504e42fb14194ce734a9dcf3eb38c820ca63dd511d36fb964e9c", size = 56047203, upload-time = "2026-08-19T21:46:43.448Z" },
+    { url = "https://files.pythonhosted.org/packages/67/3a/4fdbbfecf2c23d52c0e3f68de7f7c1b3c97a26d328c69c5f6c49c48e340e/nodejs_wheel_binaries-24.19.0-py2.py3-none-macosx_13_0_x86_64.whl", hash = "sha256:1c890adf4b7e6556ccc1ca66c866bb81884b6c9a581dee4e530dc7f78fb9d514", size = 56219459, upload-time = "2026-08-19T21:46:48.45Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/a8/0147149415195c59b8a72a594916bfb80d6be4d586f9fbfda313889e0efc/nodejs_wheel_binaries-24.19.0-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:4e029dadfae1295876063c96b236f673487e8c27379fe146c1e2250283520227", size = 60588256, upload-time = "2026-08-19T21:46:53.298Z" },
+    { url = "https://files.pythonhosted.org/packages/f4/89/6631d0982353da1bb7bc00bb1988f702822c62b42634f57999ee53b5c337/nodejs_wheel_binaries-24.19.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:4196a947bcc883f2003ab101762d729f3e99b5e86b75bd09151563403e2eceb8", size = 61123607, upload-time = "2026-08-19T21:46:58.117Z" },
+    { url = "https://files.pythonhosted.org/packages/32/a2/fa30f0841e4602995782e124359f9b910c7b481d98decf61ef0b2fc3ebfb/nodejs_wheel_binaries-24.19.0-py2.py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:352e048ab4dd35e7de5f338d1cc4fcbf77a0e93da30bf7336a8217ee246b31d7", size = 62632842, upload-time = "2026-08-19T21:47:03.42Z" },
+    { url = "https://files.pythonhosted.org/packages/18/01/22d97ca72213f66cc386ee638db30c2e62757fdf761c6029074bced83d1c/nodejs_wheel_binaries-24.19.0-py2.py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:28d078b2ced9e2069516e652dc4b1380e7a1a7f2d3934eccd1611586d283ba4c", size = 63250653, upload-time = "2026-08-19T21:47:07.938Z" },
+    { url = "https://files.pythonhosted.org/packages/88/d1/e3be8fa327a795bcaf7a19cd84299e338a7bce32ff0665fdce9cfa22573c/nodejs_wheel_binaries-24.19.0-py2.py3-none-win_amd64.whl", hash = "sha256:67e3abeb9c3830cae8c8487ae8a2af7cc27dfa75af06145cee5ca7d1857c81bd", size = 42448503, upload-time = "2026-08-19T21:47:12.093Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/37/34cf28ba1691a060174948a9927fe61091982d6048b2e403071a9acce443/nodejs_wheel_binaries-24.19.0-py2.py3-none-win_arm64.whl", hash = "sha256:d9074c665ea68b04e183d82482c86dc907d3a9bd15eb6cf85542cb785266bb36", size = 40090155, upload-time = "2026-08-19T21:47:16.032Z" },
+]
+
+[[package]]
 name = "ntgcalls"
 version = "2.2.5"
 source = { registry = "https://pypi.org/simple" }
@@ -2672,7 +2668,7 @@ wheels = [
 [[package]]
 name = "phlogo"
 version = "0.7"
-source = { git = "https://github.com/ufoptg/drawHub.git#6ba7d3aec308ffd11fd9c1f089cb04a6561154c6" }
+source = { git = "https://github.com/ufoptg/drawHub.git?rev=6ba7d3aec308ffd11fd9c1f089cb04a6561154c6#6ba7d3aec308ffd11fd9c1f089cb04a6561154c6" }
 dependencies = [
     { name = "pillow" },
 ]
@@ -3366,15 +3362,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pydub"
-version = "0.25.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fe/9a/e6bca0eed82db26562c73b5076539a4a08d3cffd19c3cc5913a3e61145fd/pydub-0.25.1.tar.gz", hash = "sha256:980a33ce9949cab2a569606b65674d748ecbca4f0796887fd6f46173a7b0d30f", size = 38326, upload-time = "2021-03-10T02:09:54.659Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a6/53/d78dc063216e62fc55f6b2eebb447f6a4b0a59f55c8406376f76bf959b08/pydub-0.25.1-py2.py3-none-any.whl", hash = "sha256:65617e33033874b59d87db603aa1ed450633288aefead953b30bded59cb599a6", size = 32327, upload-time = "2021-03-10T02:09:53.503Z" },
-]
-
-[[package]]
 name = "pyfiglet"
 version = "1.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -3590,6 +3577,19 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/6a/53/ed9d74092561d4b01a2ef1349d52cdbc135e526c245f366b089cfca6de49/python_dotenv-1.2.3.tar.gz", hash = "sha256:a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35", size = 58945, upload-time = "2026-08-16T16:54:54.067Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0d/17/c5c6b53ddc18f297992099b3d9ec16c855c0ccc83263a21fe4d1c625ec6c/python_dotenv-1.2.3-py3-none-any.whl", hash = "sha256:904552145e8bfed22162c09dab1c2b9b54fefa7b23ba780f4f26ca0316b0f0d9", size = 22780, upload-time = "2026-08-16T16:54:52.473Z" },
+]
+
+[[package]]
+name = "pytubefix"
+version = "11.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "nodejs-wheel-binaries" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/75/f5/ea2ca454118e73b67ac12ff2eee63a7d43c3d9523080481d3e4e45e2b8a7/pytubefix-11.2.1.tar.gz", hash = "sha256:979da437fd1761823e04e93cd5be8731e676b71cfc25ddb975281f0b0542f8c3", size = 1586538, upload-time = "2026-10-16T14:23:03.121Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ca/a9/2f4ffbf977e0ec58ce31a60a87f4d033a90b5632f961f376cf1c601d2b15/pytubefix-11.2.1-py3-none-any.whl", hash = "sha256:af8f6877ee96af35ab19a544bf8e8e2c7b7167cc55f537fe0e937068083c545c", size = 1595449, upload-time = "2026-10-16T14:23:00.937Z" },
 ]
 
 [[package]]
@@ -4133,262 +4133,6 @@ wheels = [
 ]
 
 [[package]]
-name = "sarahub"
-version = "2.2.0"
-source = { editable = "." }
-dependencies = [
-    { name = "aiofiles" },
-    { name = "asynclyrics-extractor" },
-    { name = "authlib" },
-    { name = "autoevals" },
-    { name = "azure-ai-inference" },
-    { name = "coloredlogs" },
-    { name = "covid" },
-    { name = "dnspython" },
-    { name = "duckduckgo-search" },
-    { name = "emoji" },
-    { name = "fastapi" },
-    { name = "ffmpeg-python" },
-    { name = "fonttools" },
-    { name = "g4f" },
-    { name = "gingerit" },
-    { name = "gitpython" },
-    { name = "google-genai" },
-    { name = "google-search-results" },
-    { name = "google-trans-new" },
-    { name = "gtts" },
-    { name = "huggingface-hub" },
-    { name = "itsdangerous" },
-    { name = "jikanpy" },
-    { name = "markdownify" },
-    { name = "meval" },
-    { name = "motor" },
-    { name = "mutagen" },
-    { name = "nest-asyncio" },
-    { name = "openai" },
-    { name = "phlogo" },
-    { name = "pillow" },
-    { name = "pokedex-py" },
-    { name = "psycopg2-binary" },
-    { name = "py-tgcalls" },
-    { name = "pydantic" },
-    { name = "pyfiglet" },
-    { name = "pygments" },
-    { name = "pyjokes" },
-    { name = "pymongo" },
-    { name = "pyrogram" },
-    { name = "pyshorteners" },
-    { name = "python-decouple" },
-    { name = "python-dotenv" },
-    { name = "quotefancy" },
-    { name = "redis" },
-    { name = "shazamio" },
-    { name = "speechrecognition" },
-    { name = "speedtest-cli" },
-    { name = "spotipy" },
-    { name = "telethon" },
-    { name = "tesseract" },
-    { name = "textblob" },
-    { name = "urllib3" },
-    { name = "uvicorn" },
-    { name = "wget" },
-    { name = "wikipedia" },
-]
-
-[package.optional-dependencies]
-ai = [
-    { name = "aiohttp" },
-    { name = "anthropic" },
-    { name = "groq" },
-]
-dev = [
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "uv" },
-]
-local = [
-    { name = "apscheduler" },
-    { name = "bs4" },
-    { name = "cairosvg" },
-    { name = "enhancer" },
-    { name = "google-api-python-client" },
-    { name = "heroku3" },
-    { name = "lottie" },
-    { name = "lxml" },
-    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "numpy", version = "2.5.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "profanitydetector" },
-    { name = "pypdf2" },
-    { name = "requests" },
-    { name = "tabulate" },
-    { name = "youtube-search-python" },
-]
-plugins = [
-    { name = "akipy" },
-    { name = "htmlwebshot" },
-    { name = "oauth2client" },
-    { name = "opencv-python-headless" },
-    { name = "psutil" },
-    { name = "pytz" },
-    { name = "qrcode" },
-    { name = "telegraph" },
-]
-vc = [
-    { name = "tgcrypto" },
-    { name = "yt-dlp" },
-]
-web = [
-    { name = "aiohttp" },
-    { name = "jinja2" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "aiofiles" },
-    { name = "aiohttp", marker = "extra == 'ai'" },
-    { name = "aiohttp", marker = "extra == 'web'" },
-    { name = "akipy", marker = "extra == 'plugins'", git = "https://github.com/ufoptg/akipy.git" },
-    { name = "anthropic", marker = "extra == 'ai'" },
-    { name = "apscheduler", marker = "extra == 'local'" },
-    { name = "asynclyrics-extractor", git = "https://github.com/New-dev0/AsyncLyricsExtractor.git" },
-    { name = "authlib" },
-    { name = "autoevals" },
-    { name = "azure-ai-inference" },
-    { name = "bs4", marker = "extra == 'local'" },
-    { name = "cairosvg", marker = "extra == 'local'" },
-    { name = "coloredlogs" },
-    { name = "covid", git = "https://github.com/ufoptg/covid.git" },
-    { name = "dnspython" },
-    { name = "duckduckgo-search" },
-    { name = "emoji" },
-    { name = "enhancer", marker = "extra == 'local'", specifier = ">=0.3.4" },
-    { name = "fastapi" },
-    { name = "ffmpeg-python" },
-    { name = "fonttools" },
-    { name = "g4f" },
-    { name = "gingerit" },
-    { name = "gitpython" },
-    { name = "google-api-python-client", marker = "extra == 'local'" },
-    { name = "google-genai" },
-    { name = "google-search-results" },
-    { name = "google-trans-new", url = "https://github.com/ufoptg/google_trans_new/archive/refs/tags/1.2.0.zip" },
-    { name = "groq", marker = "extra == 'ai'" },
-    { name = "gtts" },
-    { name = "heroku3", marker = "extra == 'local'" },
-    { name = "htmlwebshot", marker = "extra == 'plugins'" },
-    { name = "huggingface-hub" },
-    { name = "itsdangerous" },
-    { name = "jikanpy" },
-    { name = "jinja2", marker = "extra == 'web'" },
-    { name = "lottie", marker = "extra == 'local'" },
-    { name = "lxml", marker = "extra == 'local'" },
-    { name = "markdownify" },
-    { name = "meval" },
-    { name = "motor" },
-    { name = "mutagen" },
-    { name = "nest-asyncio" },
-    { name = "numpy", marker = "extra == 'local'", specifier = ">=1.21.2" },
-    { name = "oauth2client", marker = "extra == 'plugins'" },
-    { name = "openai", specifier = ">=1.40" },
-    { name = "opencv-python-headless", marker = "extra == 'plugins'" },
-    { name = "phlogo", git = "https://github.com/ufoptg/drawHub.git" },
-    { name = "pillow" },
-    { name = "pokedex-py" },
-    { name = "profanitydetector", marker = "extra == 'local'" },
-    { name = "psutil", marker = "extra == 'plugins'" },
-    { name = "psycopg2-binary" },
-    { name = "py-tgcalls" },
-    { name = "pydantic" },
-    { name = "pyfiglet" },
-    { name = "pygments" },
-    { name = "pyjokes" },
-    { name = "pymongo" },
-    { name = "pypdf2", marker = "extra == 'local'", specifier = ">=1.26.0" },
-    { name = "pyrogram" },
-    { name = "pyshorteners" },
-    { name = "pytest", marker = "extra == 'dev'" },
-    { name = "pytest-asyncio", marker = "extra == 'dev'" },
-    { name = "python-decouple" },
-    { name = "python-dotenv" },
-    { name = "pytz", marker = "extra == 'plugins'" },
-    { name = "qrcode", marker = "extra == 'plugins'" },
-    { name = "quotefancy" },
-    { name = "redis" },
-    { name = "requests", marker = "extra == 'local'" },
-    { name = "shazamio" },
-    { name = "speechrecognition" },
-    { name = "speedtest-cli" },
-    { name = "spotipy" },
-    { name = "tabulate", marker = "extra == 'local'" },
-    { name = "telegraph", marker = "extra == 'plugins'" },
-    { name = "telethon", git = "https://github.com/Mahesh953-hub/Telethon.git?rev=f029220819684c7eb87f11c91eba8a277642c4b4" },
-    { name = "tesseract" },
-    { name = "textblob" },
-    { name = "tgcrypto", marker = "extra == 'vc'" },
-    { name = "urllib3" },
-    { name = "uv", marker = "extra == 'dev'" },
-    { name = "uvicorn" },
-    { name = "wget" },
-    { name = "wikipedia" },
-    { name = "youtube-search-python", marker = "extra == 'local'" },
-    { name = "yt-dlp", marker = "extra == 'vc'" },
-]
-provides-extras = ["vc", "web", "ai", "plugins", "local", "dev"]
-
-[[package]]
-name = "shazamio"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiofiles" },
-    { name = "aiohttp" },
-    { name = "aiohttp-retry" },
-    { name = "anyio" },
-    { name = "dataclass-factory" },
-    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "numpy", version = "2.5.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "pydantic" },
-    { name = "pydub" },
-    { name = "shazamio-core" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/2f/66/31ecae67c373421db10f250a83d80653d6908f7d95080c46816102bd1fda/shazamio-0.8.1.tar.gz", hash = "sha256:5d60222735ccda4d792fd7dfe3faafaa65d15fa15b6a63de87115fb1a155b5fc", size = 26827, upload-time = "2025-06-11T09:39:15.092Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/05/b6/d7881361b565bc4736916532fcaf58e91eae8db338b2869b50636fbd8602/shazamio-0.8.1-py3-none-any.whl", hash = "sha256:ac4823dc9a8abd0b57455a3b29340c1fc090286bab0d8cc06eb862d7626691d0", size = 36266, upload-time = "2025-06-11T09:39:13.809Z" },
-]
-
-[[package]]
-name = "shazamio-core"
-version = "1.1.2"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a4/96/973f87fbb5d9b1384b0495475af28a688f7ea353ac137ea9fa03fd3f2f56/shazamio_core-1.1.2.tar.gz", hash = "sha256:e26e6b967286eca82e3fb90a20695d5e13f163e30c57e2543fe2ca98ec6dfa51", size = 36815, upload-time = "2025-02-04T03:08:42.713Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/cd/18dd3e1bbc1ba844ff88eecc2d53828d17869d9ae9082772851643488796/shazamio_core-1.1.2-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:428075dfe65f798708a315130cab213db5f2b3f68268c103cc14e88eb9f29d15", size = 977443, upload-time = "2025-02-04T03:07:37.638Z" },
-    { url = "https://files.pythonhosted.org/packages/de/1c/04b3881c292ffb142dbf8815551f22505e8dc120e2b4528bbccd0863571a/shazamio_core-1.1.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d49f0dbc020f5ef9c19fb9907f2d9e7c247c527bf26adf84267a54ba5c116183", size = 950226, upload-time = "2025-02-04T03:07:40.074Z" },
-    { url = "https://files.pythonhosted.org/packages/81/b4/15e21dd2f500ab72671f567fe802bb6f4a2e2bb68fbcd98a2ca266e4940b/shazamio_core-1.1.2-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:e6741b721ae24649b35187e521e6a1bba51014b1ef68960ff6d8a61f2e656e99", size = 1490666, upload-time = "2025-02-04T03:07:42.381Z" },
-    { url = "https://files.pythonhosted.org/packages/9b/3d/e682939ce76e4b635c57269dc6cb9f3985d19683ea2ddfb361c6e0b7071e/shazamio_core-1.1.2-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:02f57ef68e4b08eb3aba31716479bf46af524e27c7c93de971dd2bfc72a0e469", size = 1525095, upload-time = "2025-02-04T03:07:45.412Z" },
-    { url = "https://files.pythonhosted.org/packages/17/52/d0c491214da2b592e4a38094a5006504f985950fef27b810a423ad2e062b/shazamio_core-1.1.2-cp310-cp310-win32.whl", hash = "sha256:110e1e21cf447a8b5d350c8cd130edc4c45b7bc9f4c5988ba3e2d84bc44278a4", size = 785387, upload-time = "2025-02-04T03:07:47.732Z" },
-    { url = "https://files.pythonhosted.org/packages/1c/63/600e4c9bc16d29e4ab6674e6699b986e71c4dfc41415c4b0db83949bfe89/shazamio_core-1.1.2-cp310-cp310-win_amd64.whl", hash = "sha256:863887f3d5663dc562ee6e89e66d373bc5bbac7bd2f76403cf89ffa8f30bd966", size = 822467, upload-time = "2025-02-04T03:07:49.345Z" },
-    { url = "https://files.pythonhosted.org/packages/4a/66/f6619250dc98f1597ebcea503de62f8ed66b54205bf268be6c2a039333ff/shazamio_core-1.1.2-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:2a7f1d4b35e9f59884a10d2f5308125e289f2781c0e421e8ee5cc19429499029", size = 976454, upload-time = "2025-02-04T03:07:51.666Z" },
-    { url = "https://files.pythonhosted.org/packages/38/45/acea4a67b29f78db8f2c1891ff08f32c78ef15a9e4ea1fa83f32dd851481/shazamio_core-1.1.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:d12f572ad3cfd2a946b3d106078b5764e9be4d923bfab08db87071aef725b7ce", size = 950181, upload-time = "2025-02-04T03:07:53.627Z" },
-    { url = "https://files.pythonhosted.org/packages/01/04/5c12c07ca883d5aa1464bf43f5fb98b6416b8500b5221a3cf350f7ebc700/shazamio_core-1.1.2-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:837d66add372460850bfe46cd8aa3baa067d2eb016af73a67fcb22636bf9cd29", size = 1489610, upload-time = "2025-02-04T03:07:55.364Z" },
-    { url = "https://files.pythonhosted.org/packages/49/d5/ed47e01c9b5f79261f331204dfedd3510d087a84f1ddb1e1b914ec343a26/shazamio_core-1.1.2-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:881be91021c070839cbbff4de6c726dfc1b34947f4b79a5781a3714017dbc8f7", size = 1526057, upload-time = "2025-02-04T03:07:57.825Z" },
-    { url = "https://files.pythonhosted.org/packages/37/5d/b5dcdcb257dc77f6c5436dd7ef7141a8d4adc4a7e3fca4cdf9965364707b/shazamio_core-1.1.2-cp311-cp311-win32.whl", hash = "sha256:e7fda26fc2ba7d1159f7be5897a19aee9563d079e8851dc3c21cf71c962c2ae6", size = 785592, upload-time = "2025-02-04T03:07:59.682Z" },
-    { url = "https://files.pythonhosted.org/packages/c8/ac/f16584cf954ecf84d8ffb595d7002259171b8cbe22008a8fc13e5399318a/shazamio_core-1.1.2-cp311-cp311-win_amd64.whl", hash = "sha256:e0791a91ae60408b97fda8b564a3fd6a17b52e08f8f4848c1b81d5e5ac6ce323", size = 822470, upload-time = "2025-02-04T03:08:01.563Z" },
-    { url = "https://files.pythonhosted.org/packages/a8/d2/8b33c1cd90c83dda7c0bf1011d18c34b34eaafb89a5c96a508cb79200f0e/shazamio_core-1.1.2-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:05e4b9e810c135467f89ac490b98d7dbe81e944604dd4c2efdae244414428f3d", size = 978188, upload-time = "2025-02-04T03:08:03.53Z" },
-    { url = "https://files.pythonhosted.org/packages/7c/56/5ee02044550d30744668edf1a96e1699124f7c3dbe93fadf422708ba9f07/shazamio_core-1.1.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:2d85467441d71d690a998528fdda9113edd08a962e79c591a5e3842ec90f1865", size = 948140, upload-time = "2025-02-04T03:08:07.454Z" },
-    { url = "https://files.pythonhosted.org/packages/e0/62/be1a42af48d3d61ca5c9dab06c7b4aba6f49f34aea149e6e2cc8b6382d05/shazamio_core-1.1.2-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:87878fd8b432fcf79859d7edbd9e16f52c599f7e76bba06e2909c8a07e47b15f", size = 1490345, upload-time = "2025-02-04T03:08:09.757Z" },
-    { url = "https://files.pythonhosted.org/packages/fa/b1/c0e2e3b0d25c458f360922e9222cea5febbae06e550870f87e39282f6248/shazamio_core-1.1.2-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:a900b9147d294137c07525d05051ccc7b02910838a4bc28ef804b60b42356383", size = 1525380, upload-time = "2025-02-04T03:08:12.179Z" },
-    { url = "https://files.pythonhosted.org/packages/df/ee/04a30c112261ae54ffea99b55e7039c2c26e2fa08934209ac7853fb544a9/shazamio_core-1.1.2-cp312-cp312-win32.whl", hash = "sha256:c1af715d173ecf2e592b8fbaf4906dfe3b54e6f2237d2de776a87eef1601523f", size = 781930, upload-time = "2025-02-04T03:08:15.985Z" },
-    { url = "https://files.pythonhosted.org/packages/8b/80/1623a733760244b04fd90574210a3991368eaf78bc2de94f564f5c1668fd/shazamio_core-1.1.2-cp312-cp312-win_amd64.whl", hash = "sha256:74474df5c5e1429f60d162482a4b6d3a255d60c9ceaed47370fe9369e0818347", size = 817812, upload-time = "2025-02-04T03:08:18.364Z" },
-    { url = "https://files.pythonhosted.org/packages/62/ce/e8c70b088d82e2d7a294221eb297ae3ba94cd1a98f8c1a3d90f40c623b92/shazamio_core-1.1.2-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:78e37b1cca701296f842f9069a05c71ae970dbebe28f9650469126912e77d5e7", size = 1490344, upload-time = "2025-02-04T03:08:20.164Z" },
-    { url = "https://files.pythonhosted.org/packages/9a/6d/05c3c5dab6d7f33720a0d2fcc5ac6b9fdedc30628ad7cbcb728251e92edb/shazamio_core-1.1.2-cp313-cp313-manylinux_2_28_x86_64.whl", hash = "sha256:da3a5ebaae69da6d898be42a39919049ee99825ec49bfb29ca35b9c3af5ab36d", size = 1525381, upload-time = "2025-02-04T03:08:23.905Z" },
-    { url = "https://files.pythonhosted.org/packages/d3/01/6f55a63c3b733779a004ff70d624282a3f08e4ccc374ea4ae02b779bbb67/shazamio_core-1.1.2-pp310-pypy310_pp73-manylinux_2_28_aarch64.whl", hash = "sha256:2daaddc6c222fa680cd69fa7017576cc1c87668a93fb1ce0274f35251b406945", size = 1489270, upload-time = "2025-02-04T03:08:38.418Z" },
-    { url = "https://files.pythonhosted.org/packages/f8/ba/13f660e46008478fb921e9e7a6d3b990562153a122b5c2aafa332433057b/shazamio_core-1.1.2-pp310-pypy310_pp73-manylinux_2_28_x86_64.whl", hash = "sha256:c045987d6a0b496a7fa01f136b6418487aab46f248791a6973674b3def231d0d", size = 1525221, upload-time = "2025-02-04T03:08:40.057Z" },
-]
-
-[[package]]
 name = "shellingham"
 version = "1.5.4"
 source = { registry = "https://pypi.org/simple" }
@@ -4603,8 +4347,8 @@ wheels = [
 
 [[package]]
 name = "telethon"
-version = "1.44.0"
-source = { git = "https://github.com/Mahesh953-hub/Telethon.git?rev=f029220819684c7eb87f11c91eba8a277642c4b4#f029220819684c7eb87f11c91eba8a277642c4b4" }
+version = "1.45.0"
+source = { git = "https://github.com/Mahesh953-hub/Telethon.git?rev=e8019a5b701f40455c1e0cfaa2d6bd97d5bf5798#e8019a5b701f40455c1e0cfaa2d6bd97d5bf5798" }
 dependencies = [
     { name = "pyaes" },
     { name = "rsa" },
@@ -4797,6 +4541,212 @@ sdist = { url = "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a05
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9e/a4/017a7a6cbe387d961a688ec31364ae60a5c4e22c96ae9921b79a947c855d/tzlocal-5.4.4-py3-none-any.whl", hash = "sha256:aae09f0126a8a86fa736be266eb4a471380d26a0de3bc14844e7821fee3e2a15", size = 18115, upload-time = "2026-06-29T08:03:38.666Z" },
 ]
+
+[[package]]
+name = "ultroid"
+version = "28.9.2026"
+source = { editable = "." }
+dependencies = [
+    { name = "aiofiles" },
+    { name = "asynclyrics-extractor" },
+    { name = "authlib" },
+    { name = "autoevals" },
+    { name = "azure-ai-inference" },
+    { name = "coloredlogs" },
+    { name = "covid" },
+    { name = "dnspython" },
+    { name = "duckduckgo-search" },
+    { name = "emoji" },
+    { name = "fastapi" },
+    { name = "ffmpeg-python" },
+    { name = "fonttools" },
+    { name = "g4f" },
+    { name = "gingerit" },
+    { name = "gitpython" },
+    { name = "google-genai" },
+    { name = "google-search-results" },
+    { name = "google-trans-new" },
+    { name = "gtts" },
+    { name = "huggingface-hub" },
+    { name = "itsdangerous" },
+    { name = "jikanpy" },
+    { name = "markdownify" },
+    { name = "meval" },
+    { name = "motor" },
+    { name = "mutagen" },
+    { name = "nest-asyncio" },
+    { name = "openai" },
+    { name = "phlogo" },
+    { name = "pillow" },
+    { name = "pokedex-py" },
+    { name = "psycopg2-binary" },
+    { name = "py-tgcalls" },
+    { name = "pycryptodome" },
+    { name = "pydantic" },
+    { name = "pyfiglet" },
+    { name = "pygments" },
+    { name = "pyjokes" },
+    { name = "pymongo" },
+    { name = "pyrogram" },
+    { name = "pyshorteners" },
+    { name = "python-decouple" },
+    { name = "python-dotenv" },
+    { name = "pytubefix" },
+    { name = "quotefancy" },
+    { name = "redis" },
+    { name = "speechrecognition" },
+    { name = "speedtest-cli" },
+    { name = "spotipy" },
+    { name = "telethon" },
+    { name = "tesseract" },
+    { name = "textblob" },
+    { name = "urllib3" },
+    { name = "uvicorn" },
+    { name = "wget" },
+    { name = "wikipedia" },
+]
+
+[package.optional-dependencies]
+ai = [
+    { name = "aiohttp" },
+    { name = "anthropic" },
+    { name = "groq" },
+]
+dev = [
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "uv" },
+]
+local = [
+    { name = "apscheduler" },
+    { name = "bs4" },
+    { name = "cairosvg" },
+    { name = "enhancer" },
+    { name = "google-api-python-client" },
+    { name = "heroku3" },
+    { name = "lottie" },
+    { name = "lxml" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
+    { name = "numpy", version = "2.5.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "profanitydetector" },
+    { name = "pypdf2" },
+    { name = "requests" },
+    { name = "tabulate" },
+    { name = "youtube-search-python" },
+]
+plugins = [
+    { name = "akipy" },
+    { name = "htmlwebshot" },
+    { name = "oauth2client" },
+    { name = "opencv-python-headless" },
+    { name = "psutil" },
+    { name = "pytz" },
+    { name = "qrcode" },
+    { name = "telegraph" },
+]
+vc = [
+    { name = "tgcrypto" },
+    { name = "yt-dlp" },
+]
+web = [
+    { name = "aiohttp" },
+    { name = "jinja2" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "aiofiles" },
+    { name = "aiohttp", marker = "extra == 'ai'" },
+    { name = "aiohttp", marker = "extra == 'web'" },
+    { name = "akipy", marker = "extra == 'plugins'", git = "https://github.com/ufoptg/akipy.git?rev=2af0027d05ef32a89aa6dede27a7bde4d8c4ad0e" },
+    { name = "anthropic", marker = "extra == 'ai'" },
+    { name = "apscheduler", marker = "extra == 'local'" },
+    { name = "asynclyrics-extractor", git = "https://github.com/New-dev0/AsyncLyricsExtractor.git?rev=d66711558690ad53fb2b485f6c8ffa1bbd30a429" },
+    { name = "authlib" },
+    { name = "autoevals" },
+    { name = "azure-ai-inference" },
+    { name = "bs4", marker = "extra == 'local'" },
+    { name = "cairosvg", marker = "extra == 'local'" },
+    { name = "coloredlogs" },
+    { name = "covid", git = "https://github.com/ufoptg/covid.git?rev=91e231d579b175f4f8d736f95807560d4604549f" },
+    { name = "dnspython" },
+    { name = "duckduckgo-search" },
+    { name = "emoji" },
+    { name = "enhancer", marker = "extra == 'local'", specifier = ">=0.3.4" },
+    { name = "fastapi" },
+    { name = "ffmpeg-python" },
+    { name = "fonttools" },
+    { name = "g4f" },
+    { name = "gingerit" },
+    { name = "gitpython" },
+    { name = "google-api-python-client", marker = "extra == 'local'" },
+    { name = "google-genai" },
+    { name = "google-search-results" },
+    { name = "google-trans-new", url = "https://github.com/ufoptg/google_trans_new/archive/refs/tags/1.2.0.zip" },
+    { name = "groq", marker = "extra == 'ai'" },
+    { name = "gtts" },
+    { name = "heroku3", marker = "extra == 'local'" },
+    { name = "htmlwebshot", marker = "extra == 'plugins'" },
+    { name = "huggingface-hub" },
+    { name = "itsdangerous" },
+    { name = "jikanpy" },
+    { name = "jinja2", marker = "extra == 'web'" },
+    { name = "lottie", marker = "extra == 'local'" },
+    { name = "lxml", marker = "extra == 'local'" },
+    { name = "markdownify" },
+    { name = "meval" },
+    { name = "motor" },
+    { name = "mutagen" },
+    { name = "nest-asyncio" },
+    { name = "numpy", marker = "extra == 'local'", specifier = ">=1.21.2" },
+    { name = "oauth2client", marker = "extra == 'plugins'" },
+    { name = "openai", specifier = ">=1.40" },
+    { name = "opencv-python-headless", marker = "extra == 'plugins'" },
+    { name = "phlogo", git = "https://github.com/ufoptg/drawHub.git?rev=6ba7d3aec308ffd11fd9c1f089cb04a6561154c6" },
+    { name = "pillow" },
+    { name = "pokedex-py" },
+    { name = "profanitydetector", marker = "extra == 'local'" },
+    { name = "psutil", marker = "extra == 'plugins'" },
+    { name = "psycopg2-binary" },
+    { name = "py-tgcalls" },
+    { name = "pycryptodome" },
+    { name = "pydantic" },
+    { name = "pyfiglet" },
+    { name = "pygments" },
+    { name = "pyjokes" },
+    { name = "pymongo" },
+    { name = "pypdf2", marker = "extra == 'local'", specifier = ">=1.26.0" },
+    { name = "pyrogram" },
+    { name = "pyshorteners" },
+    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'" },
+    { name = "python-decouple" },
+    { name = "python-dotenv" },
+    { name = "pytubefix" },
+    { name = "pytz", marker = "extra == 'plugins'" },
+    { name = "qrcode", marker = "extra == 'plugins'" },
+    { name = "quotefancy" },
+    { name = "redis" },
+    { name = "requests", marker = "extra == 'local'" },
+    { name = "speechrecognition" },
+    { name = "speedtest-cli" },
+    { name = "spotipy" },
+    { name = "tabulate", marker = "extra == 'local'" },
+    { name = "telegraph", marker = "extra == 'plugins'" },
+    { name = "telethon", git = "https://github.com/Mahesh953-hub/Telethon.git?rev=e8019a5b701f40455c1e0cfaa2d6bd97d5bf5798" },
+    { name = "tesseract" },
+    { name = "textblob" },
+    { name = "tgcrypto", marker = "extra == 'vc'" },
+    { name = "urllib3" },
+    { name = "uv", marker = "extra == 'dev'" },
+    { name = "uvicorn" },
+    { name = "wget" },
+    { name = "wikipedia" },
+    { name = "youtube-search-python", marker = "extra == 'local'" },
+    { name = "yt-dlp", marker = "extra == 'vc'" },
+]
+provides-extras = ["vc", "web", "ai", "plugins", "local", "dev"]
 
 [[package]]
 name = "uritemplate"

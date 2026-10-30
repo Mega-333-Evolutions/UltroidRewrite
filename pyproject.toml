@@ -105,7 +105,7 @@ plugins = [
     "pytz",
     "psutil",
     "qrcode",
-    "akipy @ git+https://github.com/ufoptg/akipy.git",
+    "akipy @ git+https://github.com/ufoptg/akipy.git@2af0027d05ef32a89aa6dede27a7bde4d8c4ad0e",
     "htmlwebshot",
     "oauth2client",
     "opencv-python-headless",
@@ -135,10 +135,10 @@ include = ["pyUltroid*", "assistant*", "plugins*", "vc*", "custom*", "strings*"]
 
 # uv sources for the non-PyPI pins (mirrors the git+/zip lines of
 # requirements.txt). The Telethon fork pin is intentional — do not
-# switch it to PyPI telethon.
+# switch it to PyPI telethon. Every git source is pinned to a commit SHA.
 [tool.uv.sources]
-Telethon = { git = "https://github.com/Mahesh953-hub/Telethon.git" }
-covid = { git = "https://github.com/ufoptg/covid.git" }
-asynclyrics-extractor = { git = "https://github.com/New-dev0/AsyncLyricsExtractor.git" }
-phlogo = { git = "https://github.com/ufoptg/drawHub.git" }
+Telethon = { git = "https://github.com/Mahesh953-hub/Telethon.git", rev = "e8019a5b701f40455c1e0cfaa2d6bd97d5bf5798" }
+covid = { git = "https://github.com/ufoptg/covid.git", rev = "91e231d579b175f4f8d736f95807560d4604549f" }
+asynclyrics-extractor = { git = "https://github.com/New-dev0/AsyncLyricsExtractor.git", rev = "d66711558690ad53fb2b485f6c8ffa1bbd30a429" }
+phlogo = { git = "https://github.com/ufoptg/drawHub.git", rev = "6ba7d3aec308ffd11fd9c1f089cb04a6561154c6" }
 google-trans-new = { url = "https://github.com/ufoptg/google_trans_new/archive/refs/tags/1.2.0.zip" }

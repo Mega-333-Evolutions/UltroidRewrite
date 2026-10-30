@@ -8,7 +8,7 @@ atomic `.env` writes, live SSE logs, and a completion → restart handshake.
 
 | Entry | Mode | Completion behaviour |
 |---|---|---|
-| `python server.py` (foreground process in `start.sh`) | standalone | spawns `python -m pyUltroid` as a child, keeps serving `/status` + keep-alive |
+| `python server.py` (background process in `start.sh`) | standalone | spawns `python -m pyUltroid` as a child, keeps serving `/status` + keep-alive |
 | `python -m pyUltroid` with missing config (the runtime's `gate_web_setup` step) | embedded | main thread blocks on the completion event, then `os.execl(python -m pyUltroid)` |
 
 If both run at once (`start.sh`): whoever binds the port first owns setup.

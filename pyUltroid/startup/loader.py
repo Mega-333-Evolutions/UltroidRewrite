@@ -141,48 +141,72 @@ def load_other_plugins(
     # i prefered to keep addons sepratly, can keep on same repo tho
     if addons:
         os.environ["GIT_TERMINAL_PROMPT"] = "0"
-        if url := udB.get_key("ADDONS_URL"):
-            subprocess.run(f"git clone -q {url} addons", shell=True)
+        git_token = GIT if (GIT and GIT != "None") else None
+
         if os.path.exists("addons") and not os.path.exists("addons/.git"):
             rmtree("addons")
 
-        git_token = GIT if (GIT and GIT != "None") else None
-
-        # Must change it
         if not os.path.exists("addons"):
-            if git_token:
-                subprocess.run(
-                    f"git clone -b main https://{git_token}@github.com/Mahesh953-hub/MYADDONS addons",
-                    shell=True,
+            url = udB.get_key("ADDONS_URL")
+            if not isinstance(url, str) or not url.strip():
+                LOGS.warning(
+                    "[loader] addons are enabled but ADDONS_URL is not set; "
+                    "skipping add-on repository clone"
+                )
+            elif not (
+                url.startswith("https://")
+                or url.startswith("ssh://")
+                or url.startswith("git@")
+            ):
+                LOGS.warning(
+                    "[loader] refusing ADDONS_URL with an unsupported scheme: %s", url
                 )
             else:
-                subprocess.run(
-                    "git clone -b main https://github.com/Mahesh953-hub/MYADDONS addons",
-                    shell=True,
+                env = os.environ.copy()
+                if git_token:
+                    try:
+                        config_index = int(env.get("GIT_CONFIG_COUNT", "0"))
+                    except ValueError:
+                        config_index = 0
+                    encoded_auth = base64.b64encode(
+                        f"x-access-token:{git_token}".encode()
+                    ).decode()
+                    env["GIT_CONFIG_COUNT"] = str(config_index + 1)
+                    env[f"GIT_CONFIG_KEY_{config_index}"] = (
+                        "http.https://github.com/.extraheader"
+                    )
+                    env[f"GIT_CONFIG_VALUE_{config_index}"] = (
+                        f"AUTHORIZATION: basic {encoded_auth}"
+                    )
+                result = subprocess.run(
+                    ["git", "clone", "-q", "--", url, "addons"],
+                    env=env,
+                    check=False,
+                    timeout=120,
                 )
+                if result.returncode:
+                    LOGS.warning(
+                        "[loader] add-on repository clone failed (exit %s)",
+                        result.returncode,
+                    )
         else:
             _pull_addons_if_safe("addons", git_token)
 
-        # Must change it
-        if not os.path.exists("addons"):
-            if git_token:
-                subprocess.run(
-                    f"git clone https://{git_token}@github.com/Mahesh953-hub/MYADDONS addons",
-                    shell=True,
-                )
-            else:
-                subprocess.run(
-                    "git clone https://github.com/Mahesh953-hub/MYADDONS addons",
-                    shell=True,
-                )
         if os.path.exists("addons/addons.txt"):
             # generally addons req already there so it won't take much time
-            # subprocess.run(
-            #        "rm -rf /usr/local/lib/python3.*/site-packages/pip/_vendor/.wh*"
-            #    )
             subprocess.run(
-                f"{sys.executable} -m pip install --no-cache-dir -q --break-system-packages -r ./addons/addons.txt",
-                shell=True,
+                [
+                    sys.executable,
+                    "-m",
+                    "pip",
+                    "install",
+                    "--no-cache-dir",
+                    "-q",
+                    "--break-system-packages",
+                    "-r",
+                    "./addons/addons.txt",
+                ],
+                check=False,
             )
 
         _exclude = udB.get_key("EXCLUDE_ADDONS")
@@ -190,13 +214,14 @@ def load_other_plugins(
         _in_only = udB.get_key("INCLUDE_ADDONS")
         _in_only = _in_only.split() if _in_only else []
 
-        _async_load(
-            AsyncPluginLoader(path="addons", key="Addons"),
-            func=load_addons,
-            include=_in_only,
-            exclude=_exclude,
-            load_all_files=True,
-        )
+        if os.path.exists("addons"):
+            _async_load(
+                AsyncPluginLoader(path="addons", key="Addons"),
+                func=load_addons,
+                include=_in_only,
+                exclude=_exclude,
+                load_all_files=True,
+            )
 
     if not USER_MODE:
         # group manager

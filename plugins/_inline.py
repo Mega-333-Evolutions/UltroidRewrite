@@ -477,9 +477,10 @@ def _deploy_guide_blocks(invoker_name):
                       "Telegram command examples use the default dot prefix; replace it if you changed yours."),
             details("7a · Enable addons", [
                 paragraph("Add this setting to .env, then restart your existing worker once. "
-                          "An existing database ADDONS setting can override the environment."),
+                          "An existing database ADDONS setting can override the environment. "
+                          "Addons run with your account's permissions; only enable them after "
+                          "setting ADDONS_URL to a repository you trust."),
                 *code("ADDONS=true", language="dotenv", label="Copy addon setting"),
-                buttons(url("Default addon repository", "https://github.com/Mahesh953-hub/MYADDONS")),
             ], opened=True),
             details("7b · Use a channel", [
                 paragraph("Join your trusted channel with the user account and upload addon .py files there. "

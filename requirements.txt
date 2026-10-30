@@ -1,3 +1,4 @@
+# Git dependencies are pinned to immutable commit SHAs. Update them deliberately.
 mutagen
 GitPython
 fastapi
@@ -7,7 +8,7 @@ dnspython
 redis
 pymongo
 psycopg2-binary
-git+https://github.com/Mahesh953-hub/Telethon.git
+git+https://github.com/Mahesh953-hub/Telethon.git@e8019a5b701f40455c1e0cfaa2d6bd97d5bf5798
 py-tgcalls
 pycryptodome
 mutagen
@@ -33,14 +34,14 @@ azure-ai-inference
 autoevals
 openai>=1.40
 duckduckgo_search
-git+https://github.com/ufoptg/covid.git
+git+https://github.com/ufoptg/covid.git@91e231d579b175f4f8d736f95807560d4604549f
 emoji
 fonttools
 gtts
 gingerit
 jikanpy
-git+https://github.com/New-dev0/AsyncLyricsExtractor.git
-git+https://github.com/ufoptg/drawHub.git
+git+https://github.com/New-dev0/AsyncLyricsExtractor.git@d66711558690ad53fb2b485f6c8ffa1bbd30a429
+git+https://github.com/ufoptg/drawHub.git@6ba7d3aec308ffd11fd9c1f089cb04a6561154c6
 pokedex.py
 pyfiglet
 pygments

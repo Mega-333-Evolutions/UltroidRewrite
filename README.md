@@ -111,17 +111,25 @@ docker run --rm -it \
   sarahub
 ```
 
-For a **private** fork, pass a token at build time (used only for the clone):
+For a **private** fork, pass a token as a BuildKit secret. It is mounted only
+for the clone step and is not stored in image history:
 
 ```bash
-docker build --build-arg GIT_TOKEN=<PAT> -t sarahub .
+(umask 077 && printf '%s' "$GIT_TOKEN" > /tmp/git_token)
+DOCKER_BUILDKIT=1 docker build --secret id=GIT_TOKEN,src=/tmp/git_token -t sarahub .
+rm -f /tmp/git_token
 ```
 
 The container runs `./start.sh` as a non-root `sarah` user and exposes port
-`7860`. All tunables (`TZ`, `APP_USER`, `PYTHON_VERSION`, `GIT_TOKEN`,
-`EXPOSE_PORT`, …) are declared as `ARG`s in [`Dockerfile`](./Dockerfile);
-[`.dockerignore`](./.dockerignore) keeps secrets and runtime state out of the
-build context.
+`7860`. All tunables (`TZ`, `APP_USER`, `PYTHON_VERSION`, `REPO_OWNER`,
+`REPO_NAME`, `REPO_BRANCH`, `EXPOSE_PORT`, …) are declared as `ARG`s in
+[`Dockerfile`](./Dockerfile); [`.dockerignore`](./.dockerignore) keeps secrets
+and runtime state out of the build context.
+
+Addons are opt-in and have no built-in default repository. If you set
+`ADDONS=true`, also set `ADDONS_URL` (a database key) to a repository you
+trust; otherwise the addon tree is skipped. Addon code runs with your
+account's permissions.
 
 The Hugging Face Spaces frontmatter (`sdk: docker`) means this same image works
 as a Space — the setup token printed at startup is the access control for the

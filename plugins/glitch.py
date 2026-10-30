@@ -23,7 +23,9 @@ async def _(e):
         import glitch_me  # ignore :pylint
     except ModuleNotFoundError:
         await fns.bash(
-            "pip install -e git+https://github.com/1Danish-00/glitch_me.git#egg=glitch_me"
+            "pip install -e "
+            "git+https://github.com/1Danish-00/glitch_me.git"
+            "@c97d2a4cecab53d553d5d2b5a80857ffdf651754#egg=glitch_me"
         )
     reply = await e.get_reply_message()
     if not reply or not reply.media:
