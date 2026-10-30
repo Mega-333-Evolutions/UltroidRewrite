@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # =============================================================================
-#  SarahUB — container image (CUDA / GPU variant)
+#  Container image (CUDA / GPU variant)
 # =============================================================================
 
 ARG BASE_IMAGE=nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04
@@ -18,8 +18,8 @@ ARG CONDA_ENV=py311
 ARG PYTHON_VERSION=3.11
 ARG NODE_URL=https://deb.nodesource.com/setup_current.x
 ARG MINIFORGE_URL=https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
-ARG REPO_OWNER=Mahesh953-hub
-ARG REPO_NAME=SarahUB
+ARG REPO_OWNER=Mega-333-Evolutions
+ARG REPO_NAME=UltroidRewrite
 ARG REPO_BRANCH=main
 ARG EXPOSE_PORT=7860
 
