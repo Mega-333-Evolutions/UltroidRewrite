@@ -3,27 +3,12 @@
 # =============================================================================
 #  SarahUB — container image (CUDA / GPU variant)
 # =============================================================================
-#  Build tunables are declared as ARGs below so they can be overridden at
-#  build time without editing this file.
-#
-#  Secrets/env vars are consumed at BUILD time. Easiest way: export them in
-#  your shell, then pass the ARG by name with no value (Docker forwards the
-#  matching shell env var automatically):
-#
-#      export GIT_TOKEN=<PAT>
-#      docker build --build-arg TZ=Europe/London \
-#          --build-arg GIT_TOKEN --build-arg PYTHON_VERSION=3.11 .
-#
-#  Or pass the value inline:
-#      docker build --build-arg GIT_TOKEN="$GIT_TOKEN" .
-# =============================================================================
 
-# Base image is the only tunable the FROM instruction itself needs.
 ARG BASE_IMAGE=nvidia/cuda:12.5.1-cudnn-devel-ubuntu22.04
 FROM ${BASE_IMAGE}
 
 # -----------------------------------------------------------------------------
-# Build-time tunables (defaults mirror the original hardcoded values)
+# Build-time tunables
 # -----------------------------------------------------------------------------
 ARG TZ=Asia/Kolkata
 ARG APP_USER=sarah
@@ -36,7 +21,6 @@ ARG MINIFORGE_URL=https://github.com/conda-forge/miniforge/releases/latest/downl
 ARG REPO_OWNER=Mahesh953-hub
 ARG REPO_NAME=SarahUB
 ARG REPO_BRANCH=main
-ARG GIT_TOKEN
 ARG EXPOSE_PORT=7860
 
 # -----------------------------------------------------------------------------
@@ -45,8 +29,7 @@ ARG EXPOSE_PORT=7860
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=${TZ} \
     CONDA_AUTO_UPDATE_CONDA=false \
-    PYTHONUNBUFFERED=1 \
-    GIT_TOKEN=${GIT_TOKEN}
+    PYTHONUNBUFFERED=1
 
 RUN export TZ=${TZ}
 
@@ -127,14 +110,14 @@ RUN curl -sL -o ${APP_HOME}/miniforge.sh ${MINIFORGE_URL} \
 ENV PATH=${MINICONDA_DIR}/envs/${CONDA_ENV}/bin:${MINICONDA_DIR}/bin:$PATH
 
 # -----------------------------------------------------------------------------
-# Application source — cloned so the container keeps `.git` and start.sh's
-# `git pull` can keep the deployment updatable. `GIT_TOKEN` is only injected
-# when provided (e.g. for a private fork): `--build-arg GIT_TOKEN=<PAT>`.
+# Application source — securely cloned using BuildKit secrets
 # -----------------------------------------------------------------------------
 RUN echo "Better logs#2"
 
-RUN if [ -n "${GIT_TOKEN}" ]; then \
-        GIT_URL="https://${GIT_TOKEN}@github.com/${REPO_OWNER}/${REPO_NAME}.git"; \
+RUN --mount=type=secret,id=GIT_TOKEN,required=false \
+    if [ -f /run/secrets/GIT_TOKEN ]; then \
+        TOKEN=$(cat /run/secrets/GIT_TOKEN); \
+        GIT_URL="https://${TOKEN}@github.com/${REPO_OWNER}/${REPO_NAME}.git"; \
     else \
         GIT_URL="https://github.com/${REPO_OWNER}/${REPO_NAME}.git"; \
     fi \
@@ -142,32 +125,22 @@ RUN if [ -n "${GIT_TOKEN}" ]; then \
 
 WORKDIR ${APP_HOME}/${REPO_NAME}
 
-RUN ls -all && git pull
-
-RUN chown -R ${APP_USER}:${APP_USER} ${APP_HOME}
+RUN ls -all
 
 # -----------------------------------------------------------------------------
 # Python dependencies
-# `res*/st*/op*` expands to `resources/startup/optional-requirements.txt`.
 # -----------------------------------------------------------------------------
 RUN echo "I want rebuild!!!!"
 
-# Core deps MUST succeed. The database drivers are pinned explicitly so a
-# midway `requirements.txt` failure can no longer fall through the old `|| true`
-# and ship an image whose Redis/Mongo/SQL clients are silently missing (that
-# made the app fall back to LocalDB even when MONGO_URI was set). With this
-# split, a broken core install fails the build instead.
 RUN pip install --no-cache-dir -U pip \
     && pip install --no-cache-dir requests dnspython redis pymongo psycopg2-binary \
     && pip install --no-cache-dir fastapi uvicorn nest-asyncio \
     && pip install --no-cache-dir -r requirements.txt
 
-# Optional extras for local deploys (git deps + heavy native builds) can fail
-# without breaking the bot, so THIS line alone is allowed to fail.
 RUN pip install --no-cache-dir -r res*/st*/op* || true
 
 # -----------------------------------------------------------------------------
-# FFmpeg — pulled from a prebuilt static image (needs root to write /usr/local)
+# FFmpeg — pulled from a prebuilt static image
 # -----------------------------------------------------------------------------
 USER root
 COPY --from=mwader/static-ffmpeg:latest /ffmpeg /ffprobe /usr/local/bin/
@@ -175,8 +148,8 @@ COPY --from=mwader/static-ffmpeg:latest /ffmpeg /ffprobe /usr/local/bin/
 # -----------------------------------------------------------------------------
 # Permissions + final runtime user
 # -----------------------------------------------------------------------------
-USER ${APP_USER}
-RUN chmod -R 755 ${APP_HOME} \
+RUN chown -R ${APP_USER}:${APP_USER} ${APP_HOME} \
+    && chmod -R 755 ${APP_HOME} \
     && chmod +x ${APP_HOME}/${REPO_NAME}/start.sh
 
 USER ${APP_USER}
